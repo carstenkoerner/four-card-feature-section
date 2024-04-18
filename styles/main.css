@@ -168,6 +168,7 @@ body {
   }
   .cards__card {
     min-height: 15.6rem;
+    max-width: 21.8rem;
   }
   .cards__image {
     margin-top: 2.8rem;
