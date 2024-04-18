@@ -1,0 +1,158 @@
+@import "./typography";
+@import "./resets";
+@import "./variables";
+@import "./mixins";
+
+body {
+  background-color: $clr-very-light-gray;
+  @include poppins-regular();
+  font-size: $fs-paragraph;
+  color: $-clr-very-dark-blue;
+  min-height: 99svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.header {
+  text-align: center;
+
+  &__subheading {
+    @include poppins-extralight;
+    font-size: 1.5rem;
+    margin-bottom:0.6rem;
+  }
+
+  &__heading {
+    @include poppins-semibold;
+    font-size: 1.5rem;
+    margin-bottom: 1.1rem;
+  }
+
+  &__content{
+    color: $-clr-grayish-blue;
+    max-width: 33rem;
+    line-height: 1.6rem;
+    margin-bottom: 4.6rem;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  &__card {
+    max-width: 20rem;
+    min-height: 14rem;
+    padding: 1.8rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.3rem;
+    box-shadow: 0px 15px 12px hsla(223, 40%, 90%, 0.8);
+  }
+
+  &__header{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__content {
+    color: $-clr-grayish-blue;
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+  }
+
+  &__image {
+    margin-top: 2.3rem;
+    height: 3.5rem;
+    float: right;
+  }
+
+  &__supervisor {
+    border-top: 4px solid $clr-cyan;
+  }
+
+  &__teambuilder {
+    border-top: 4px solid $clr-red;
+  }
+
+  &__karma {
+    border-top: 4px solid $clr-orange;
+  }
+
+  &__calculator {
+    border-top: 4px solid $clr-blue;
+  }
+}
+
+.attribution { 
+  margin-top: 1rem;
+  font-size: 10px; 
+  text-align: center; 
+  
+  a { color: hsl(228, 45%, 44%); }
+}
+
+@media (min-width: 67rem) {
+  .header {
+    &__subheading {
+      font-size: 2.2rem;
+    }
+
+    &__heading {
+      font-size: 2.2rem;
+      margin-bottom: 1.32rem;
+    }
+
+    &__content {
+      width: 33rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.875rem;
+    align-items: center;
+
+    &__card {
+      min-height: 15.6rem;
+    
+    }
+
+    &__image {
+      margin-top: 2.8rem;
+      height: 4rem;
+    }
+      
+    &__supervisor {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+
+    &__teambuilder {
+      grid-column: 2;
+    }
+
+    &__karma {
+      grid-column: 2;
+    }
+
+    &__calculator {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+  }
+  .attribution {
+    margin-top: 3rem;
+  }
+}
+
+
